@@ -44,7 +44,7 @@
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "ujSVyF"
+                    "id": "PVcBlg"
                   },
                   "activityProcessed": true,
                   "dialog": "Intro"
@@ -84,7 +84,16 @@
           "$designer": {
             "id": "h00Z2n"
           },
-          "activity": "${SendActivity_h00Z2n()}"
+          "activity": "${SendActivity_h00Z2n()}",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "mhI5zR"
+          },
+          "activityProcessed": true,
+          "dialog": "ErrorDialog"
         }
       ]
     },
@@ -96,81 +105,12 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.IfCondition",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "qNZRdS"
+            "id": "TWHSYF"
           },
-          "condition": "count(turn.recognized.answers[0].context.prompts) > 0",
-          "actions": [
-            {
-              "$kind": "Microsoft.SetProperty",
-              "$designer": {
-                "id": "7OLq63"
-              },
-              "property": "dialog.qnaContext",
-              "value": "=turn.recognized.answers[0].context.prompts"
-            },
-            {
-              "$kind": "Microsoft.TextInput",
-              "$designer": {
-                "id": "eaDxSJ"
-              },
-              "maxTurnCount": 3,
-              "alwaysPrompt": true,
-              "allowInterruptions": false,
-              "prompt": "${TextInput_Prompt_Rhkmn2()}",
-              "property": "turn.qnaMultiTurnResponse"
-            },
-            {
-              "$kind": "Microsoft.SetProperty",
-              "$designer": {
-                "id": "OOAfTu"
-              },
-              "property": "turn.qnaMatchFromContext",
-              "value": "=where(dialog.qnaContext, item, item.displayText == turn.qnaMultiTurnResponse)"
-            },
-            {
-              "$kind": "Microsoft.DeleteProperty",
-              "$designer": {
-                "id": "Jg25kY"
-              },
-              "property": "dialog.qnaContext"
-            },
-            {
-              "$kind": "Microsoft.IfCondition",
-              "$designer": {
-                "id": "HFpVYf"
-              },
-              "condition": "turn.qnaMatchFromContext && count(turn.qnaMatchFromContext) > 0",
-              "actions": [
-                {
-                  "$kind": "Microsoft.SetProperty",
-                  "$designer": {
-                    "id": "iE8VTL"
-                  },
-                  "property": "turn.qnaIdFromPrompt",
-                  "value": "=turn.qnaMatchFromContext[0].qnaId"
-                }
-              ]
-            },
-            {
-              "$kind": "Microsoft.EmitEvent",
-              "$designer": {
-                "id": "vVsDPm"
-              },
-              "eventName": "activityReceived",
-              "eventValue": "=turn.activity"
-            }
-          ],
-          "elseActions": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "vlRVNV"
-              },
-              "activity": "${SendActivity_1ipPlY()}"
-            }
-          ]
+          "activityProcessed": true,
+          "dialog": "QnA2"
         }
       ]
     }

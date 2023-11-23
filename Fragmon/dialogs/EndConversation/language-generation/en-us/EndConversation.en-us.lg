@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# ConfirmInput_Prompt_WwV9yo_text()
+- Did I answer you quey?
+# ConfirmInput_Prompt_WwV9yo()
+[Activity
+    Text = ${ConfirmInput_Prompt_WwV9yo_text()}
+]
+
+# ConfirmInput_Prompt_zKOA3b()
+[Activity
+    Text = ${ConfirmInput_Prompt_zKOA3b_text()}
+]
+
+# ConfirmInput_Prompt_zKOA3b_text()
+- Do you want to start from begining?
+# SendActivity_U1QUHK()
+[Activity
+    Text = ${SendActivity_U1QUHK_text()}
+]
+
+# SendActivity_U1QUHK_text()
+- Please enter you query
+# SendActivity_GpME8w()
+[Activity
+    Text = ${SendActivity_GpME8w_text()}
+]
+
+# SendActivity_GpME8w_text()
+- Thank you

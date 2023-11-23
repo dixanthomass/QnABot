@@ -58,7 +58,7 @@
                   "$designer": {
                     "id": "YrBPYD"
                   },
-                  "disabled": false,
+                  "disabled": true,
                   "maxTurnCount": 3,
                   "alwaysPrompt": false,
                   "allowInterruptions": false,
@@ -67,6 +67,31 @@
                   "invalidPrompt": "",
                   "defaultValueResponse": "",
                   "property": "dialog.question"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "TbVHxa"
+                  },
+                  "activity": "${SendActivity_TbVHxa()}"
+                },
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "K6VKSb"
+                  }
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "B2Jss1"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "QnA2",
+                  "options": {
+                    "question": "dialog.question"
+                  },
+                  "disabled": true
                 }
               ]
             },
@@ -166,7 +191,7 @@
                           "$designer": {
                             "id": "Efq1qh"
                           },
-                          "disabled": false,
+                          "disabled": true,
                           "maxTurnCount": 3,
                           "alwaysPrompt": false,
                           "allowInterruptions": false,
@@ -175,6 +200,19 @@
                           "invalidPrompt": "",
                           "defaultValueResponse": "",
                           "property": "dialog.course"
+                        },
+                        {
+                          "$kind": "Microsoft.SendActivity",
+                          "$designer": {
+                            "id": "u0KOW3"
+                          },
+                          "activity": "${SendActivity_u0KOW3()}"
+                        },
+                        {
+                          "$kind": "Microsoft.EndDialog",
+                          "$designer": {
+                            "id": "wh38up"
+                          }
                         }
                       ]
                     }

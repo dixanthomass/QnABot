@@ -28,3 +28,17 @@
 
 # TextInput_Prompt_YrBPYD_text()
 - How can i help you?
+# SendActivity_TbVHxa()
+[Activity
+    Text = ${SendActivity_TbVHxa_text()}
+]
+
+# SendActivity_TbVHxa_text()
+- How can i help you?
+# SendActivity_u0KOW3()
+[Activity
+    Text = ${SendActivity_u0KOW3_text()}
+]
+
+# SendActivity_u0KOW3_text()
+- Please enter the course you want?

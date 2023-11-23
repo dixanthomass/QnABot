@@ -1,0 +1,14 @@
+[import](common.lg)
+
+# TextInput_Prompt_0k9RlO()
+[Activity
+    Text = ${expandText(@answer)}
+    SuggestedActions = ${foreach(turn.recognized.answers[0].context.prompts, x, x.displayText)}
+]
+
+# SendActivity_JNcvPj_text()
+- ${expandText(@answer)}
+# SendActivity_JNcvPj()
+[Activity
+    Text = ${SendActivity_JNcvPj_text()} 
+]
