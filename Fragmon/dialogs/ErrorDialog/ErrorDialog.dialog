@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "sGa0Gm",
+    "name": "ErrorDialog",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "UDKD3Z"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "UD5yDA"
+          },
+          "activity": "${SendActivity_UD5yDA()}"
+        }
+      ]
+    }
+  ],
+  "generator": "ErrorDialog.lg",
+  "recognizer": "ErrorDialog.lu.qna",
+  "id": "ErrorDialog"
+}

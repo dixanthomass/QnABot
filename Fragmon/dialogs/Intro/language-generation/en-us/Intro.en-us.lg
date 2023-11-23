@@ -1,0 +1,30 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_ztgZIL()
+[Activity
+    Text = ${ChoiceInput_Prompt_ztgZIL_text()}
+]
+
+# ChoiceInput_Prompt_ztgZIL_text()
+- How can I assist you with your study abroad plans?
+# ChoiceInput_Prompt_zejOzI()
+[Activity
+    Text = ${ChoiceInput_Prompt_zejOzI_text()}
+]
+
+# ChoiceInput_Prompt_zejOzI_text()
+- Great! Are you looking for universities by course, country, or ranking?
+# TextInput_Prompt_Efq1qh()
+[Activity
+    Text = ${TextInput_Prompt_Efq1qh_text()}
+]
+
+# TextInput_Prompt_Efq1qh_text()
+- Please enter the course you want?
+# TextInput_Prompt_YrBPYD()
+[Activity
+    Text = ${TextInput_Prompt_YrBPYD_text()}
+]
+
+# TextInput_Prompt_YrBPYD_text()
+- How can i help you?

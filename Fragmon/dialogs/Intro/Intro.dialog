@@ -1,0 +1,213 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "NWuPIW",
+    "name": "Intro",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "pgRU8D"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "ztgZIL"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_ztgZIL()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "dialog.choice",
+          "style": "heroCard",
+          "choices": [
+            "University Selection",
+            "Application Process",
+            "Visa Guidance",
+            "Other Queries"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "6F6NQV"
+          },
+          "condition": "dialog.choice",
+          "cases": [
+            {
+              "value": "Other Queries",
+              "actions": [
+                {
+                  "$kind": "Microsoft.TextInput",
+                  "$designer": {
+                    "id": "YrBPYD"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${TextInput_Prompt_YrBPYD()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "property": "dialog.question"
+                }
+              ]
+            },
+            {
+              "value": "Visa Guidance",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "RkWR6b"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ErrorDialog"
+                }
+              ]
+            },
+            {
+              "value": "Application Process",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "u3npml"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ErrorDialog"
+                }
+              ]
+            },
+            {
+              "value": "University Selection",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "zejOzI"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_zejOzI()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or "
+                  },
+                  "property": "dialog.course",
+                  "style": "heroCard",
+                  "choices": [
+                    "By Course",
+                    "By Country",
+                    "By Ranking"
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SwitchCondition",
+                  "$designer": {
+                    "id": "tWSlka"
+                  },
+                  "condition": "dialog.course",
+                  "cases": [
+                    {
+                      "value": "By Ranking",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.BeginDialog",
+                          "$designer": {
+                            "id": "Lgd3pj"
+                          },
+                          "activityProcessed": true,
+                          "dialog": "ErrorDialog"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "By Country",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.BeginDialog",
+                          "$designer": {
+                            "id": "wbxyZo"
+                          },
+                          "activityProcessed": true,
+                          "dialog": "ErrorDialog"
+                        }
+                      ]
+                    },
+                    {
+                      "value": "By Course",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.TextInput",
+                          "$designer": {
+                            "id": "Efq1qh"
+                          },
+                          "disabled": false,
+                          "maxTurnCount": 3,
+                          "alwaysPrompt": false,
+                          "allowInterruptions": false,
+                          "prompt": "${TextInput_Prompt_Efq1qh()}",
+                          "unrecognizedPrompt": "",
+                          "invalidPrompt": "",
+                          "defaultValueResponse": "",
+                          "property": "dialog.course"
+                        }
+                      ]
+                    }
+                  ],
+                  "default": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "fOhrAf"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "ErrorDialog"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "kjx2rv"
+              },
+              "activityProcessed": true,
+              "dialog": "ErrorDialog"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "Intro.lg",
+  "recognizer": "Intro.lu.qna",
+  "id": "Intro"
+}

@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_UD5yDA()
+[Activity
+    Text = ${SendActivity_UD5yDA_text()}
+]
+
+# SendActivity_UD5yDA_text()
+- Something went wrong
