@@ -6,14 +6,14 @@
 ]
 
 # SendActivity_Greeting_text()
-- Welcome to Fragmon
+- Welcome to Fragomen Education Services.
 # SendActivity_DidNotUnderstand()
 [Activity
     Text = ${SendActivity_DidNotUnderstand_text()}
 ]
 
 # SendActivity_DidNotUnderstand_text()
-- Sorry, I didn't get that.
+- Sorry, I didn't get that. Please try a different query.
 # SendActivity_h00Z2n()
 [Activity
     Text = ${SendActivity_h00Z2n_text()}
@@ -21,3 +21,18 @@
 
 # SendActivity_h00Z2n_text()
 - ${turn.dialogEvent}
+
+# SendActivity_nUZIPl()
+[Activity
+    Text = ${SendActivity_nUZIPl_text()}
+]
+
+# SendActivity_nUZIPl_text()
+- Something went wrong. Sorry for the inconvenience.
+# SendActivity_wsrgbc()
+[Activity
+    Text = ${SendActivity_wsrgbc_text()}
+]
+
+# SendActivity_wsrgbc_text()
+- Hi, I'm your chat buddy.

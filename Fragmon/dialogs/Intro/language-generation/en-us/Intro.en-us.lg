@@ -13,7 +13,7 @@
 ]
 
 # ChoiceInput_Prompt_zejOzI_text()
-- Great! Are you looking for universities by course, country, or ranking?
+- Great! Are you looking for universities:
 # TextInput_Prompt_Efq1qh()
 [Activity
     Text = ${TextInput_Prompt_Efq1qh_text()}
@@ -34,7 +34,7 @@
 ]
 
 # SendActivity_TbVHxa_text()
-- How can i help you?
+- How can I help you?
 # SendActivity_u0KOW3()
 [Activity
     Text = ${SendActivity_u0KOW3_text()}

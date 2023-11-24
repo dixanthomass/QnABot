@@ -1,7 +1,7 @@
 [import](common.lg)
 
 # ConfirmInput_Prompt_WwV9yo_text()
-- Did I answer you quey?
+- Did I answer you query?
 # ConfirmInput_Prompt_WwV9yo()
 [Activity
     Text = ${ConfirmInput_Prompt_WwV9yo_text()}
@@ -13,7 +13,7 @@
 ]
 
 # ConfirmInput_Prompt_zKOA3b_text()
-- Do you want to start from begining?
+- Do you want to start from beginning?
 # SendActivity_U1QUHK()
 [Activity
     Text = ${SendActivity_U1QUHK_text()}
@@ -27,4 +27,31 @@
 ]
 
 # SendActivity_GpME8w_text()
-- Thank you
+- Thank you and have a nice day. You can restart the conversation anytime by typing a query..
+# ChoiceInput_Prompt_w3Zy4Z()
+[Activity
+    Text = ${ChoiceInput_Prompt_w3Zy4Z_text()}
+]
+
+# ChoiceInput_Prompt_w3Zy4Z_text()
+- Did I answer you query?
+# ConfirmInput_Prompt_p0rWBn_text()
+- Do you want to start from beginning?
+# ConfirmInput_Prompt_p0rWBn()
+[Activity
+    Text = ${ConfirmInput_Prompt_p0rWBn_text()}
+]
+
+# SendActivity_QGxKpn_text()
+- Please enter you query
+# SendActivity_QGxKpn()
+[Activity
+    Text = ${SendActivity_QGxKpn_text()}
+]
+
+# SendActivity_BLXwsN_text()
+- Thank you and have a nice day. You can restart the conversation anytime by typing a query..
+# SendActivity_BLXwsN()
+[Activity
+    Text = ${SendActivity_BLXwsN_text()}
+]

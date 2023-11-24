@@ -22,6 +22,14 @@
             "id": "UD5yDA"
           },
           "activity": "${SendActivity_UD5yDA()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "nayUz4"
+          },
+          "activityProcessed": true,
+          "dialog": "Intro"
         }
       ]
     }

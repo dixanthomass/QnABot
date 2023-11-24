@@ -36,6 +36,13 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
+                    "id": "wsrgbc"
+                  },
+                  "activity": "${SendActivity_wsrgbc()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
                     "id": "859266",
                     "name": "Send a response"
                   },
@@ -93,7 +100,23 @@
             "id": "mhI5zR"
           },
           "activityProcessed": true,
-          "dialog": "ErrorDialog"
+          "dialog": "ErrorDialog",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "nUZIPl"
+          },
+          "activity": "${SendActivity_nUZIPl()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ditneK"
+          },
+          "activityProcessed": true,
+          "dialog": "Intro"
         }
       ]
     },

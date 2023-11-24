@@ -22,7 +22,7 @@
             "id": "WwV9yo"
           },
           "defaultLocale": "en-us",
-          "disabled": false,
+          "disabled": true,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
@@ -40,8 +40,120 @@
           "style": "auto",
           "confirmChoices": [
             "Yes",
-            "No"
+            "No, Type your own query."
           ]
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "w3Zy4Z"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ChoiceInput_Prompt_w3Zy4Z()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "style": "suggestedAction",
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "property": "dialog.queryAnswered"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "UtfbG2"
+          },
+          "condition": "dialog.queryAnswered",
+          "cases": [
+            {
+              "value": "Yes",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "BLXwsN"
+                  },
+                  "activity": "${SendActivity_BLXwsN()}"
+                }
+              ]
+            },
+            {
+              "value": "No",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ConfirmInput",
+                  "$designer": {
+                    "id": "p0rWBn"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "prompt": "${ConfirmInput_Prompt_p0rWBn()}",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "dialog.startFromBegining",
+                  "style": "suggestedAction",
+                  "confirmChoices": [
+                    "Yes",
+                    "No, Type your own query."
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "OpwQTx"
+                  },
+                  "condition": "dialog.startFromBegining==True",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "xg2TYD"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "Intro"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "QGxKpn"
+                      },
+                      "activity": "${SendActivity_QGxKpn()}"
+                    },
+                    {
+                      "$kind": "Microsoft.EndDialog",
+                      "$designer": {
+                        "id": "IZAWeN"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "default": []
         },
         {
           "$kind": "Microsoft.IfCondition",
@@ -64,7 +176,8 @@
               "$designer": {
                 "id": "GpME8w"
               },
-              "activity": "${SendActivity_GpME8w()}"
+              "activity": "${SendActivity_GpME8w()}",
+              "disabled": true
             }
           ],
           "actions": [
@@ -74,7 +187,7 @@
                 "id": "zKOA3b"
               },
               "defaultLocale": "en-us",
-              "disabled": false,
+              "disabled": true,
               "maxTurnCount": 3,
               "alwaysPrompt": false,
               "allowInterruptions": false,
@@ -85,7 +198,8 @@
               "choiceOptions": {
                 "includeNumbers": true,
                 "inlineOrMore": ", or ",
-                "inlineOr": " or "
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
               },
               "property": "dialog.startFromBegining",
               "style": "auto",
@@ -107,7 +221,8 @@
                     "id": "P6uFxM"
                   },
                   "activityProcessed": true,
-                  "dialog": "Intro"
+                  "dialog": "Intro",
+                  "disabled": true
                 }
               ],
               "elseActions": [
@@ -116,17 +231,21 @@
                   "$designer": {
                     "id": "U1QUHK"
                   },
-                  "activity": "${SendActivity_U1QUHK()}"
+                  "activity": "${SendActivity_U1QUHK()}",
+                  "disabled": true
                 },
                 {
                   "$kind": "Microsoft.EndDialog",
                   "$designer": {
                     "id": "xKGXsB"
-                  }
+                  },
+                  "disabled": true
                 }
-              ]
+              ],
+              "disabled": true
             }
-          ]
+          ],
+          "disabled": true
         }
       ]
     }
